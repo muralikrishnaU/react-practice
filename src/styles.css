@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background:#f5f5f5;
+}
+
+.App {
+  text-align: center;
+}
+
+p{
+    margin: 10px 0 0 50px;
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+
+.check{
+  color: grey;
+  font-size: 12px;
+}
+
+br {
+  height: 20px;
+  background-color: grey;
+  width: 100%;
+}
+img{
+    width: 100%;
+    height: auto;
+    transition: transform 300ms ease-in;
+    transform: scale(1);
+}
+
+.player-image{
+    overflow: hidden;
+    border-radius: 2px 2px 0 0;
+    max-height: 200px;
+    height: 200px;
+}
+.player-country-image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40px;
+
+}
+
+.player-name{
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+
+.player-age{
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.player-name, .player-age{
+    padding: 0 16px;
+    text-align: center;
+}
+
+
+.player{
+    background: white;
+    margin: 16px;
+    width: 200px;
+    border-radius: 2px;
+    
+}
+
+.players{
+  display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    padding: 16px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.player-action{
+    padding: 16px;
+}
+
+.header{
+  text-align: center;
+  background-image: url("https://wallpaperbrowse.com/media/images/natural-green-trimmed-grass-sport-field-background-header.jpg");
+  background-attachment: fixed;
+
+}
