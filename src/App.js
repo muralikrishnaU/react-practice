@@ -7,17 +7,32 @@ class App extends Component {
   constructor(){
   	super();
   	this.state={
-  		dynamicPlayers:[]
+  		dynamicPlayers:[],
+  		searchString: "",
+  		cart: [],
+  		filteredPlayers: []
   		}
+  	}
+  	updateSearchString(searchStringAsInpupt){
+  		this.setState({
+  			searchString: searchStringAsInpupt
+  		}
+  	}
+  	handleAddToCart(newPlayer){
+	    console.log("This is the message from App and this is the player that is clicked",newPlayer)
+	    let newCart = [...this.state.cart,newPlayer]
+	    this.setState({
+	      cart: newCart
+    	})
   	}
    render(){
     return( 
     	<div className = 'header'>
     		<h1>THE ALLTIME WORLD ODI XI</h1>
-    		<div>
-    		<SearchBar />
-	    		<div className= 'App'>
-	    			<PlayersContainer players={this.state.dynamicPlayers}/>
+    		<div className= 'App'>
+    			<SearchBar searchString={this.state.searchString} cart={this.state.cart} thisIsFunctionAsProp_updateSearchString={(searchStringInput)=>this.updateSearchString(searchStringInput)}/>
+	    		<div>
+	    			<PlayersContainer cart={this.state.cart} players={this.state.dynamicPlayers} handleAddToCartInPlayersContainer={(player)=>this.handleAddToCart(player)}/>
 	    		</div>
 	    	</div>
     	</div>	

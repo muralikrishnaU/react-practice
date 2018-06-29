@@ -4,24 +4,27 @@ class SearchBar extends Component{
 	constructor(){
 		super();
 		this.state={
-			inputString:""
+			searchString:""
 		}	
-		this.updateInput = this.updateInput.bind(this);
-		this.handleInput = this.handleInput.bind(this);
+		
 	}
-	updateInput(event){
-		this.setState({name : event.target.value});
-	}
-	handleInput(){
-	    const finalInput= this.state.name;
-	    console.log(finalInput);
+	
+	handleSearchInput(event){
+	    
+    	// this.setState({
+    	// 	searchString: event.target.value
+    	// })
+    	
+	    this.props.thisIsFunctionAsProp_updateSearchString(event.target.value)
+	    console.log(event.target.value);
 	}
 	render() {
     return (
-      <div className="myInput">  
-      	<input type="text" onChange={this.updateInput}/>
-      	<button type="submit" onClick={this.handleInput}>Search</button>
-      </div>
+	    <div className='header'>
+	    	<input value={this.props.searchString} onChange={event=>this.handleSearchInput(event)}/>
+	    	<span> {this.props.cart.length} </span>
+
+	    </div>
     )
 	}
 }
